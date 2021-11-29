@@ -15,10 +15,10 @@ The DApp User Interface when running should look like...
 
 ## UML Diagrams
 
-Activity Diagram - Udacity Supply Chain.pdf
-Class Diagram - Udacity Supply Chain.pdf
-Sequence Diagram - Udacity Supply Chain.pdf
-State Diagram - Udacity Supply Chain.pdf
+- Activity Diagram - Udacity Supply Chain.pdf
+- Class Diagram - Udacity Supply Chain.pdf
+- Sequence Diagram - Udacity Supply Chain.pdf
+- State Diagram - Udacity Supply Chain.pdf
 
 ## Smart Contract Deployment and Transactions
 
