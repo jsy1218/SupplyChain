@@ -13,100 +13,22 @@ The DApp User Interface when running should look like...
 ![truffle test](images/ftc_transaction_history.png)
 
 
-## Getting Started
+## UML Diagrams
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Activity Diagram - Udacity Supply Chain.pdf
+Class Diagram - Udacity Supply Chain.pdf
+Sequence Diagram - Udacity Supply Chain.pdf
+State Diagram - Udacity Supply Chain.pdf
 
-### Prerequisites
+## Smart Contract Deployment and Transactions
 
-Please make sure you've already installed ganache-cli, Truffle and enabled MetaMask extension in your browser.
-
-```
-Give examples (to be clarified)
-```
-
-### Installing
-
-> The starter code is written for **Solidity v0.4.24**. At the time of writing, the current Truffle v5 comes with Solidity v0.5 that requires function *mutability* and *visibility* to be specified (please refer to Solidity [documentation](https://docs.soliditylang.org/en/v0.5.0/050-breaking-changes.html) for more details). To use this starter code, please run `npm i -g truffle@4.1.14` to install Truffle v4 with Solidity v0.4.24. 
-
-A step by step series of examples that tell you have to get a development env running
-
-Clone this repository:
-
-```
-git clone https://github.com/udacity/nd1309/tree/master/course-5/project-6
-```
-
-Change directory to ```project-6``` folder and install all requisite npm packages (as listed in ```package.json```):
-
-```
-cd project-6
-npm install
-```
-
-Launch Ganache:
-
-```
-ganache-cli -m "spirit supply whale amount human item harsh scare congress discover talent hamster"
-```
-
-Your terminal should look something like this:
-
-![truffle test](images/ganache-cli.png)
-
-In a separate terminal window, Compile smart contracts:
-
-```
-truffle compile
-```
-
-Your terminal should look something like this:
-
-![truffle test](images/truffle_compile.png)
-
-This will create the smart contract artifacts in folder ```build\contracts```.
-
-Migrate smart contracts to the locally running blockchain, ganache-cli:
-
-```
-truffle migrate
-```
-
-Your terminal should look something like this:
-
-![truffle test](images/truffle_migrate.png)
-
-Test smart contracts:
-
-```
-truffle test
-```
-
-All 10 tests should pass.
-
-![truffle test](images/truffle_test.png)
-
-In a separate terminal window, launch the DApp:
-
-```
-npm run dev
-```
-
-## Built With
-
-* [Ethereum](https://www.ethereum.org/) - Ethereum is a decentralized platform that runs smart contracts
-* [IPFS](https://ipfs.io/) - IPFS is the Distributed Web | A peer-to-peer hypermedia protocol
-to make the web faster, safer, and more open.
-* [Truffle Framework](http://truffleframework.com/) - Truffle is the most popular development framework for Ethereum with a mission to make your life a whole lot easier.
-
-
-## Authors
-
-See also the list of [contributors](https://github.com/your/project/contributors.md) who participated in this project.
-
-## Acknowledgments
-
-* Solidity
-* Ganache-cli
-* Truffle
-* IPFS
+Contract 0x32622d127459Fd11c82fE85D7e0994E44c546542
+Transaction IDs viewable under: https://rinkeby.etherscan.io/address/0x32622d127459fd11c82fe85d7e0994e44c546542
+- harvestItem - https://rinkeby.etherscan.io/tx/0x72a700175319c62887ad088fd987da9116960a533aac17b66cebce10a636b0ee
+- processItem - https://rinkeby.etherscan.io/tx/0x90329466cb9948493e5f0313b1c0d467335109297b840dacac15665fef9819c3
+- packItem - https://rinkeby.etherscan.io/tx/0x1f49f488be62a5684c790c1fe65e03d744b48e5449b0dc8f55fd198f3f8c3a20
+- sellItem - https://rinkeby.etherscan.io/tx/0xc6ac65f5958abcb4a6987ee729df5d3160a5f755dbd3c4c04e01a97542f15c47
+- buyItem - https://rinkeby.etherscan.io/tx/0xd9fc0098325d0a50121a4aba2bbafb52d4910e381066ef3710dbcd31031ac6db
+- shipItem - https://rinkeby.etherscan.io/tx/0x68c81842b8b7bf9fb48bee57e1eae60e50bdf9ee75e783872e2983462dd7d9ce
+- receiveItem - https://rinkeby.etherscan.io/tx/0x9533c87837bd0fe274881f6e68470ccd6f34938666b7848d15445baa611b7e57
+- purchaseItem - https://rinkeby.etherscan.io/tx/0x7156a054c9375cb9f96d72e75ec67d33804c1246c1710601b4346513b4361b16

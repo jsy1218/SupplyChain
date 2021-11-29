@@ -4,18 +4,18 @@ App = {
     emptyAddress: "0x0000000000000000000000000000000000000000",
     sku: 0,
     upc: 0,
-    metamaskAccountID: "0x0000000000000000000000000000000000000000",
-    ownerID: "0x0000000000000000000000000000000000000000",
-    originFarmerID: "0x0000000000000000000000000000000000000000",
+    metamaskAccountID: "0x0ad8e7Abb97831cdAfEE568584142F4a497F2C4C",
+    ownerID: "0x0ad8e7Abb97831cdAfEE568584142F4a497F2C4C",
+    originFarmerID: "0x0eAAa94550aA01f99a5B8973eDE48EC562C521CA",
     originFarmName: null,
     originFarmInformation: null,
     originFarmLatitude: null,
     originFarmLongitude: null,
     productNotes: null,
     productPrice: 0,
-    distributorID: "0x0000000000000000000000000000000000000000",
-    retailerID: "0x0000000000000000000000000000000000000000",
-    consumerID: "0x0000000000000000000000000000000000000000",
+    distributorID: "0xC9431664916999592773947A5A367F97185DA5C3",
+    retailerID: "0xC16d613B9447AAe0F0357206A5BaF44D27b6A5c1",
+    consumerID: "0x4Bb9d61BC02A04E2Ffa9a1D3A96b93A56e70dbd7",
 
     init: async function () {
         App.readForm();
@@ -100,6 +100,7 @@ App = {
     initSupplyChain: function () {
         /// Source the truffle compiled smart contracts
         var jsonSupplyChain='../../build/contracts/SupplyChain.json';
+        web3.eth.defaultAccount = web3.eth.accounts[0];
         
         /// JSONfy the smart contracts
         $.getJSON(jsonSupplyChain, function(data) {
@@ -166,6 +167,7 @@ App = {
     harvestItem: function(event) {
         event.preventDefault();
         var processId = parseInt($(event.target).data('id'));
+        console.log('processId',processId);
 
         App.contracts.SupplyChain.deployed().then(function(instance) {
             return instance.harvestItem(
@@ -188,6 +190,7 @@ App = {
     processItem: function (event) {
         event.preventDefault();
         var processId = parseInt($(event.target).data('id'));
+        console.log('processId',processId);
 
         App.contracts.SupplyChain.deployed().then(function(instance) {
             return instance.processItem(App.upc, {from: App.metamaskAccountID});
@@ -202,6 +205,7 @@ App = {
     packItem: function (event) {
         event.preventDefault();
         var processId = parseInt($(event.target).data('id'));
+        console.log('processId',processId);
 
         App.contracts.SupplyChain.deployed().then(function(instance) {
             return instance.packItem(App.upc, {from: App.metamaskAccountID});
@@ -216,9 +220,10 @@ App = {
     sellItem: function (event) {
         event.preventDefault();
         var processId = parseInt($(event.target).data('id'));
+        console.log('processId',processId);
 
         App.contracts.SupplyChain.deployed().then(function(instance) {
-            const productPrice = web3.toWei(1, "ether");
+            const productPrice = web3.toWei(App.productPrice, "ether");
             console.log('productPrice',productPrice);
             return instance.sellItem(App.upc, App.productPrice, {from: App.metamaskAccountID});
         }).then(function(result) {
@@ -232,9 +237,11 @@ App = {
     buyItem: function (event) {
         event.preventDefault();
         var processId = parseInt($(event.target).data('id'));
+        console.log('processId',processId);
+        console.log('productPrice',App.productPrice);
 
         App.contracts.SupplyChain.deployed().then(function(instance) {
-            const walletValue = web3.toWei(3, "ether");
+            const walletValue = web3.toWei(App.productPrice, "ether");
             return instance.buyItem(App.upc, {from: App.metamaskAccountID, value: walletValue});
         }).then(function(result) {
             $("#ftc-item").text(result);
@@ -247,6 +254,7 @@ App = {
     shipItem: function (event) {
         event.preventDefault();
         var processId = parseInt($(event.target).data('id'));
+        console.log('processId',processId);
 
         App.contracts.SupplyChain.deployed().then(function(instance) {
             return instance.shipItem(App.upc, {from: App.metamaskAccountID});
@@ -261,6 +269,7 @@ App = {
     receiveItem: function (event) {
         event.preventDefault();
         var processId = parseInt($(event.target).data('id'));
+        console.log('processId',processId);
 
         App.contracts.SupplyChain.deployed().then(function(instance) {
             return instance.receiveItem(App.upc, {from: App.metamaskAccountID});
@@ -275,6 +284,7 @@ App = {
     purchaseItem: function (event) {
         event.preventDefault();
         var processId = parseInt($(event.target).data('id'));
+        console.log('processId',processId);
 
         App.contracts.SupplyChain.deployed().then(function(instance) {
             return instance.purchaseItem(App.upc, {from: App.metamaskAccountID});
