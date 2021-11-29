@@ -32,3 +32,20 @@ Transaction IDs viewable under: https://rinkeby.etherscan.io/address/0x32622d127
 - shipItem - https://rinkeby.etherscan.io/tx/0x68c81842b8b7bf9fb48bee57e1eae60e50bdf9ee75e783872e2983462dd7d9ce
 - receiveItem - https://rinkeby.etherscan.io/tx/0x9533c87837bd0fe274881f6e68470ccd6f34938666b7848d15445baa611b7e57
 - purchaseItem - https://rinkeby.etherscan.io/tx/0x7156a054c9375cb9f96d72e75ec67d33804c1246c1710601b4346513b4361b16
+
+# Dependencies
+
+```
+JanettekiMacBook-Pro:SupplyChain janet$ truffle version
+Truffle v4.1.14 (core: 4.1.14)
+Solidity v0.4.24 (solc-js)
+JanettekiMacBook-Pro:SupplyChain janet$ node -v
+v14.17.5
+# web3 is using version 1.5.2
+JanettekiMacBook-Pro:SupplyChain janet$ npm list web3 | grep web3
+│ │ │   │ └── web3@1.5.2  deduped
+│ │ │   └── web3@1.5.2  deduped
+│ │     └── web3@1.5.2  deduped
+│   └── web3@1.5.2 
+  └── web3@1.2.1  extraneous
+```
